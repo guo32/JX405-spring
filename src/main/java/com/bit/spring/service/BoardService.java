@@ -79,6 +79,25 @@ public class BoardService {
         return b;
     }
 
+    public boolean insert(BoardDTO boardDTO) {
+        boolean result = true;
+        String query = "INSERT INTO `board`(`title`, `content`, `writerId`, `entry_date`, `modify_date`) VALUES(?, ?, ?, NOW(), NOW())";
+
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.setString(1, boardDTO.getTitle());
+            pstmt.setString(2, boardDTO.getContent());
+            pstmt.setInt(3, boardDTO.getWriterId());
+
+            pstmt.executeUpdate();
+            pstmt.close();
+        } catch (SQLException e) {
+            result = false;
+        }
+
+        return result;
+    }
+
     public void update(BoardDTO boardDTO) {
         String query = "UPDATE `board` SET `title` = ?, `content` = ?, `modify_date` = NOW() WHERE `id` = ?";
         try {

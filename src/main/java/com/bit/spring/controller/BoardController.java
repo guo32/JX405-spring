@@ -3,6 +3,8 @@ package com.bit.spring.controller;
 import com.bit.spring.model.BoardDTO;
 import com.bit.spring.model.UserDTO;
 import com.bit.spring.service.BoardService;
+import com.bit.spring.service.ReplyService;
+import com.bit.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +21,14 @@ import java.util.ArrayList;
 @RequestMapping("/board/")
 public class BoardController {
     BoardService boardService;
+    UserService userService;
+    ReplyService replyService;
 
     @Autowired
-    public BoardController(BoardService boardService) {
+    public BoardController(BoardService boardService, UserService userService, ReplyService replyService) {
         this.boardService = boardService;
+        this.userService = userService;
+        this.replyService = replyService;
     }
 
     @GetMapping("showAll/{pageNo}")
@@ -52,9 +58,33 @@ public class BoardController {
         }
 
         model.addAttribute("result", b);
+        model.addAttribute("nickname", userService.getNickname(b.getWriterId()));
+        model.addAttribute("replyList", replyService.selectByBoardId(id));
         int loginId = ((UserDTO) session.getAttribute("login")).getId();
         model.addAttribute("loginId", loginId);
         return "/board/showOne";
+    }
+
+    @GetMapping("register")
+    public String showRegister(HttpSession session, RedirectAttributes redirectAttributes) {
+        if(session.getAttribute("login") == null) {
+            redirectAttributes.addFlashAttribute("message", "다시 로그인해주세요.");
+            return "redirect:/";
+        }
+        return "/board/register";
+    }
+
+    @PostMapping("register")
+    public String registerBoard(HttpSession session, RedirectAttributes redirectAttributes, BoardDTO boardDTO) {
+        UserDTO login = (UserDTO) session.getAttribute("login");
+        if(login == null) {
+            redirectAttributes.addFlashAttribute("message", "다시 로그인해주세요.");
+            return "redirect:/";
+        }
+        boardDTO.setWriterId(login.getId());
+        boardService.insert(boardDTO);
+
+        return "redirect:/board/showAll/1";
     }
 
     @GetMapping("update/{id}")

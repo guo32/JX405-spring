@@ -21,6 +21,55 @@ public class UserService {
         connection = this.connector.makeConnection();
     }
 
+    public boolean insert(UserDTO userDTO) {
+        boolean result = true;
+        String query = "INSERT INTO `user`(`username`, `password`, `nickname`) VALUES(?, ?, ?)";
+
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.setString(1, userDTO.getUsername());
+            pstmt.setString(2, userDTO.getPassword());
+            pstmt.setString(3, userDTO.getNickname());
+
+            pstmt.executeUpdate();
+            pstmt.close();
+        } catch (SQLException e) {
+            System.out.println("[회원가입] 등록 오류");
+            return false;
+        }
+
+        return result;
+    }
+
+    public void update(UserDTO userDTO) {
+        String query = "UPDATE `user` SET `password` = ?, `nickname` = ? WHERE `id` = ?";
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.setString(1, userDTO.getPassword());
+            pstmt.setString(2, userDTO.getNickname());
+            pstmt.setInt(3, userDTO.getId());
+
+            pstmt.executeUpdate();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(int id) {
+        String query = "DELETE FROM `user` WHERE `id` = ?";
+
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.setInt(1, id);
+
+            pstmt.executeUpdate();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public UserDTO auth(UserDTO attempt) {
         UserDTO userDTO = null;
         String query = "SELECT * FROM `user` WHERE `username` = ? AND `password` = ?";
@@ -45,5 +94,26 @@ public class UserService {
         }
 
         return userDTO;
+    }
+
+    public String getNickname(int id) {
+        String nick = null;
+        String query = "SELECT `nickname` FROM `user` WHERE `id` = ?";
+
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.setInt(1, id);
+
+            ResultSet resultSet = pstmt.executeQuery();
+            if(resultSet.next()) {
+                nick = resultSet.getString("nickname");
+            }
+            resultSet.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return nick;
     }
 }
