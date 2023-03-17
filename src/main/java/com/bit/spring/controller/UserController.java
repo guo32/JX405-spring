@@ -30,9 +30,11 @@ public class UserController {
 
         if(result != null) { // 로그인 성공 시
             session.setAttribute("login", result);
+            System.out.println("login success");
             return "redirect:/board/showAll/1";
         } else { // 로그인 실패 시
             model.addAttribute("message", "로그인 정보를 다시 확인해주세요.");
+            System.out.println("login fail");
             return "index";
         }
     }

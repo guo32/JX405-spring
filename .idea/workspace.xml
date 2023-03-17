@@ -9,31 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fcd573e-cc97-4456-848c-a28c35cd7508" name="Changes" comment="2023-03-15 과제 코드 백업">
+    <list default="true" id="4fcd573e-cc97-4456-848c-a28c35cd7508" name="Changes" comment="2023-03-16 수업 코드 백업">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/handler/UserAuthFailHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/model/UserCustomDetails.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/BoardMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/spring/securityContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/board/upsert.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/spring_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spring_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/connector/MySqlConnector.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/ReplyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/model/BoardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/model/BoardDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/model/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/service/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/service/ReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/service/ReplyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/spring/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bit/spring/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/spring/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/spring/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/spring/dispatcherServlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/spring/dispatcherServlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/BoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/BoardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/board/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/showAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/board/showAll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/showOne.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/board/showOne.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/user/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,6 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/USER/IdeaProjects/jx405_spring/web/WEB-INF/views/board",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,6 +93,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\jx405_spring\web\WEB-INF\views\board" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\USER\IdeaProjects\jx405_spring\web\resources\css" />
     </key>
@@ -215,7 +214,7 @@
       <workItem from="1678859866858" duration="4873000" />
       <workItem from="1678864832819" duration="12796000" />
       <workItem from="1678924549372" duration="9153000" />
-      <workItem from="1678933835513" duration="20392000" />
+      <workItem from="1678933835513" duration="43569000" />
     </task>
     <task id="LOCAL-00001" summary="2023-03-15 수업 코드 백업">
       <created>1678874509294</created>
@@ -231,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678881208990</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2023-03-16 수업 코드 백업">
+      <created>1679012016626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679012016626</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +246,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2023-03-15 수업 코드 백업" />
     <MESSAGE value="2023-03-15 과제 코드 백업" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023-03-15 과제 코드 백업" />
+    <MESSAGE value="2023-03-16 수업 코드 백업" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023-03-16 수업 코드 백업" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

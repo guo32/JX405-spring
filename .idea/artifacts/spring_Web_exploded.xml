@@ -22,7 +22,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.3.25" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.25" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:3.0.1" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.0.1" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.3.13.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.3.13.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="spring/web/Web" />

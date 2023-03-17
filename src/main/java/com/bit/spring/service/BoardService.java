@@ -35,6 +35,10 @@ public class BoardService {
         session.insert(NAMESPACE + ".insert", boardDTO);
     }
 
+    public void update(BoardDTO attempt) {
+        session.update(NAMESPACE + ".update", attempt);
+    }
+
     public int selectLastPage() {
         int count = session.selectOne(NAMESPACE + ".count");
         int total = count / PAGE_SIZE;
@@ -45,10 +49,27 @@ public class BoardService {
         return total;
     }
 
-    public Map<String, Object> selectByKeyword(String keyword) {
+    public Map<String, Object> selectByKeyword(String keyword, int pageNo) {
         Map<String, Object> result = new HashMap<>();
-        result.put("list", session.selectList(NAMESPACE + ".selectByKeyword", keyword));
+        Map<String, Object> params = new HashMap<>();
+        params.put("start", (pageNo - 1) * PAGE_SIZE);
+        params.put("size", PAGE_SIZE);
+        params.put("keyword", keyword);
+
+        result.put("list", session.selectList(NAMESPACE + ".selectByKeyword", params));
+        result.put("total", countSearchResult(keyword));
+
         return result;
+    }
+
+    public int countSearchResult(String keyword) {
+        int temp =  session.selectOne(NAMESPACE + ".countSearchResult", keyword);
+        int totalPage = temp / PAGE_SIZE;
+        if(temp % PAGE_SIZE != 0) {
+            totalPage++;
+        }
+
+        return totalPage;
     }
 
 //    private final int PAGE_SIZE = 15;

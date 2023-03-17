@@ -93,7 +93,7 @@
                             <li class="page-item">
                                 <a class="page-link" href="${pagingAddr}/1?keyword=${keyword}">&lt;</a>
                             </li>
-                            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+                            <c:forEach var="i" begin="${paging.start}" end="${paging.end}">
                                 <c:choose>
                                     <c:when test="${i == current}">
                                         <li class="page-item active disabled">
@@ -108,7 +108,7 @@
                                 </c:choose>
                             </c:forEach>
                             <li class="page-item">
-                                <a class="page-link" href="${pagingAddr}/${lastPage}?keyword=${keyword}">&gt;</a>
+                                <a class="page-link" href="${pagingAddr}/${paging.totalPage}?keyword=${keyword}">&gt;</a>
                             </li>
                         </ul>
                     </div>

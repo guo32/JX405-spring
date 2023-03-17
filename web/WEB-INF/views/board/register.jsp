@@ -20,11 +20,11 @@
             <table>
                 <tr>
                     <td><label for="title">제목</label></td>
-                    <td><input type="text" id="title" name="title" placeholder="제목"></td>
+                    <td><input type="text" id="title" name="title" placeholder="제목" value="${board.title}"></td>
                 </tr>
                 <tr>
                     <td><label for="content">내용</label></td>
-                    <td><textarea id="content" name="content" placeholder="내용 작성하기" rows="10"></textarea></td>
+                    <td><textarea id="content" name="content" placeholder="내용 작성하기" rows="10">${board.content}</textarea></td>
                 </tr>
                 <tr>
                     <td colspan="2">
