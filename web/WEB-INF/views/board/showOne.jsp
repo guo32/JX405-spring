@@ -11,7 +11,7 @@
 <div>
     글 번호: ${result.id} <br>
     제목: ${result.title} <br>
-    작성자: ${nickname} | ${result.entryDate} | ${result.modifyDate} <br>
+    작성자: ${result.writerNickname} | ${result.entryDate} | ${result.modifyDate} <br>
     내용: ${result.content} <br>
     <c:if test="${loginId == result.writerId}">
         <div>

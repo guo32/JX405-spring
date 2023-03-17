@@ -9,7 +9,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class HomeController {
     @RequestMapping("/")
     public String showIndex(Model model) {
-        System.out.println(model.getAttribute("message"));
         return "index";
     }
 }

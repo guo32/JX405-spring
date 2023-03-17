@@ -8,6 +8,7 @@ import java.sql.Date;
 public class BoardDTO {
     private int id;
     private int writerId;
+    private String writerNickname;
     private String title;
     private String content;
     private Date entryDate;
